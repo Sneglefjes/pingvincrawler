@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon crawler</title>
+    <link rel="stylesheet" href="cssfiler/compiled.css">
+</head>
+<body>
+    <header>
+        <h1>Dungeon crawler</h1>
+    </header>
+
+    <div class="main-content">
+
+        
+        <div class="info">
+            <h2>Do you wish to enter the dungeons?</h2>
+            <p>Enter at your own risk...</p>
+            <input type="button" name="showPlayer" id="showPlayer" value="Click to play">
+        </div>
+        
+        <div class="map">
+            
+            <!--<div class="player" id="sprite"></div>-->
+            <svg width="449" height="529" viewBox="0 0 449 529" fill="none" xmlns="http://www.w3.org/2000/svg" id="sprite" class="player">
+                <!--<rect width="449" height="529" fill="white"/>-->
+                <path d="M140.5 99C139.3 114.6 150.333 137.5 156 147C151.667 137.08 146.7 112.593 161.5 94C176.3 75.4072 188 74.5863 192 76.5C200.833 78.5 217.7 87.4 214.5 107C211.3 126.6 215.833 133.167 218.5 134C220.5 137 228.5 142.9 244.5 142.5C260.5 142.1 265.5 131.333 266 126C263.667 122.167 259.2 111.4 260 99C260.8 86.6 264.333 82.8333 266 82.5C272.833 78.8333 288.6 74.5 297 86.5C305.4 98.5 308.167 110.167 308.5 114.5V147C322 87.5 316.5 86.5 313.5 68C311.1 53.2 291.5 37.5 282 31.5C271.333 26 246.5 15 232.5 15C215 15 201.5 15 179.5 31.5C157.5 48 142 79.5 140.5 99Z" fill="black" stroke="black"/>
+                <path d="M70.5 431.5C25.3 427.1 109.333 241.333 157 149C167.4 198.6 167.667 236.667 166.5 249.5C153.333 312 115.7 435.9 70.5 431.5Z" fill="#E5E5E5"/>
+                <path d="M383.5 401C417.1 338.2 347.167 205.5 308 147C292 176.2 284.333 224.833 282.5 245.5C302.167 323.5 349.9 463.8 383.5 401Z" fill="#E5E5E5"/>
+                <path d="M70.5 431.5C25.3 427.1 109.333 241.333 157 149C167.4 198.6 167.667 236.667 166.5 249.5C153.333 312 115.7 435.9 70.5 431.5Z" stroke="black"/>
+                <path d="M383.5 401C417.1 338.2 347.167 205.5 308 147C292 176.2 284.333 224.833 282.5 245.5C302.167 323.5 349.9 463.8 383.5 401Z" stroke="black"/>
+                <path d="M97.5 419C91 441.167 101.2 489.8 194 507C286.8 524.2 335.667 487.5 348.5 467C353.167 458 361.7 435 358.5 415" stroke="black"/>
+                <path d="M249 116.5C241 114.1 234.333 115.5 232 116.5C224 119.3 235.333 127.667 242 131.5C247.667 127.5 257 118.9 249 116.5Z" fill="#464646" stroke="black"/>
+                <path d="M176 106C175.333 104.667 175.3 102 180.5 102C185.7 102 193.333 104.667 196.5 106C196.833 106.333 197.5 107.2 197.5 108" stroke="black"/>
+                <path d="M292.729 103.333C293.31 102.222 293.339 100 288.809 100C284.279 100 277.63 102.222 274.871 103.333C274.581 103.611 274 104.333 274 105" stroke="black"/>
+                <path d="M184.5 106.5C182.5 105.7 183 103.5 183.5 102.5C185.667 102.833 190.3 103.7 191.5 104.5C192.7 105.3 191 106.167 190 106.5C189 106.833 186.5 107.3 184.5 106.5Z" fill="black" stroke="black"/>
+                <path d="M284.5 104.5C286.1 103.7 285.833 101.5 285.5 100.5C283.833 101 280.1 102 278.5 102C276.9 102 277.833 103.667 278.5 104.5C279.833 104.833 282.9 105.3 284.5 104.5Z" fill="black" stroke="black"/>
+                <path d="M160.5 486.5C152.167 484.167 135.1 480.9 133.5 486.5C133.5 498 143 500 148 504C152 507.2 181.667 510.667 196 512C199.333 512 206.2 509.6 207 500C207.8 490.4 192.667 490.667 185 492C179.4 481.2 166.333 483.833 160.5 486.5Z" fill="black" stroke="black"/>
+                <path d="M314.867 483.352C322.007 480.823 336.629 477.281 338 483.352C338 495.821 329.861 497.989 325.577 502.326C322.149 505.796 296.731 509.554 284.451 511C281.595 511 275.712 508.398 275.026 497.989C274.341 487.581 287.307 487.87 293.875 489.316C298.673 477.606 309.869 480.461 314.867 483.352Z" fill="black" stroke="black"/>
+            </svg>
+            
+            <div class="row">
+                <p class="start"></p>
+                <p class="wall"></p>
+                <p class="wall"></p>
+                <p class="path"></p>
+                <p class="path"></p>
+                <p class="path"></p>
+            </div>
+    
+            <div class="row">
+                <p class="path"></p>
+                <p class="path"></p>
+                <p class="path"></p>
+                <p class="path"></p>
+                <p class="wall"></p>
+                <p class="path"></p>
+            </div>
+    
+            <div class="row">
+                <p class="wall"></p>
+                <p class="wall"></p>
+                <p class="wall"></p>
+                <p class="wall"></p>
+                <p class="wall"></p>
+                <p class="path"></p>
+            </div>
+    
+            <div class="row">
+                <p class="path"></p>
+                <p class="path"></p>
+                <p class="path"></p>
+                <p class="path"></p>
+                <p class="wall"></p>
+                <p class="path"></p>
+            </div>
+    
+            <div class="row">
+                <p class="path"></p>
+                <p class="wall"></p>
+                <p class="wall"></p>
+                <p class="path"></p>
+                <p class="path"></p>
+                <p class="path"></p>
+            </div>
+    
+            <div class="row">
+                <p class="end">End</p>
+                <p class="wall"></p>
+                <p class="wall"></p>
+                <p class="wall"></p>
+                <p class="wall"></p>
+                <p class="wall"></p>
+            </div>
+        </div>
+
+        <div class="popups">
+
+            <div class="pop-start">
+                <h1>The game has begun</h1>
+                <p>Suddenly you find yourself in uttermost darkness. It smells of wet earth and stone. You feel around you and as your eyes adjust to the dark you see that there are walls on all sides except forward. Move using the buttons at the bottom of the map.</p>
+            </div>
+        </div>
+
+        <div class="movement">
+            <button class="up">up</button>
+            <button class="down">down</button>
+            <button class="left">left</button>
+            <button class="right">right</button>
+        </div>
+
+        <div class="loots">
+            <div class="message">
+                <p></p>
+                <button id="yes">Yes</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="health"></div>
+            <div class="weapon"></div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy;2021 - Ingvild</p>
+    </footer>
+    <script src="dung.js"></script>
+</body>
+</html>
